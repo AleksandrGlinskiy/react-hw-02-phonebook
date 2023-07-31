@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Filter } from './Filter/Filter';
 
 import { ContactForm } from './Form/ContactForm';
 export class App extends Component {
@@ -37,10 +38,7 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
       <h2>Contacts</h2>
-      <label htmlFor="">
-        Find contacts by name 
-      <input type="text" value={filter} onChange={this.changeFilter}/>
-      </label>
+      <Filter value={filter} onChange={this.changeFilter}/>
       <ul>
       {visibleContacts.map((contact) => (
                 <li key={contact.id} >
